@@ -16,11 +16,17 @@ public class Lecture03Task {
         }
 
         Map<Integer, String> countryMap = new HashMap<>();
+        countryMap.put(1, countries.get(0));
+        countryMap.put(2, countries.get(1));
+        countryMap.put(3, countries.get(2));
+
+        int index = 3;
+
         try {
-            countryMap.put(1, countries.get(0));
-            countryMap.put(2, countries.get(1));
-            countryMap.put(3, countries.get(2));
-            countryMap.put(4, countries.get(3));
+            if (index < 0 || index >= countries.size()){
+                throw new IndexOutOfBoundsException();
+            }
+            countryMap.put(4, countries.get(index));
         } catch (IndexOutOfBoundsException e) {
             System.out.println("配列の範囲を超えています。");
         }
